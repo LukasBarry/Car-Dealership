@@ -1,0 +1,49 @@
+<%= form_for(@vehicle) do |f| %>
+  <% if @vehicle.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@vehicle.errors.count, "error") %> prohibited this vehicle from being saved:</h2>
+
+      <ul>
+      <% @vehicle.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= f.label :make %><br>
+    <%= f.text_field :make, class: "form-control" %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :year %><br>
+    <%= f.number_field :year, class: "form-control" %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :miles %><br>
+    <%= f.number_field :miles, class: "form-control" %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :category %><br>
+    <%= f.text_field :category, class: "form-control" %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :price %><br>
+    <%= f.number_field :price, class: "form-control" %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :color %><br>
+    <%= f.text_field :color, class: "form-control" %>
+  </div>
+  <div class="field form-group">
+    <%= f.label "Photo" %><br>
+    <%= f.file_field :avatar %>
+  </div>
+  <div class="actions form-group">
+    <%= f.submit %>
+  </div>
+<% end %>
